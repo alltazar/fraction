@@ -43,4 +43,24 @@ public class TestFraction{
 
         assertEquals(4,Fraction.div(-3,f).getNum_());
     }
+
+    @Test(expected = ArithmeticException.class)
+    public void check4(){
+        Fraction f = Fraction.div(4,5);
+
+        Fraction.div(f,0).getDen_();
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void check5(){
+        Fraction.div(4,0);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void check6(){
+        Fraction f = Fraction.div(4,0);
+        Fraction f2 = Fraction.div(0,9);
+
+        Fraction.div(f,f2).getDen_();
+    }
 }

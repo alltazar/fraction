@@ -26,6 +26,9 @@ class Fraction{
     }
 
     static Fraction div(Fraction f, int a){
+        if (a == 0){
+            throw new ArithmeticException();
+        }
         return new Fraction(f.num_,f.den_*a);
     }
 
@@ -38,10 +41,16 @@ class Fraction{
     }
 
     static Fraction div(int a, int b){
+        if (b == 0){
+            throw new ArithmeticException();
+        }
         return new Fraction(a,b);
     }
 
     static Fraction div(Fraction f1, Fraction f2){
+        if (f1.den_ == 0 || f2.num_ == 0){
+            throw new ArithmeticException();
+        }
         return new Fraction(f2.den_*f1.num_, f2.num_*f1.den_);
     }
 }
