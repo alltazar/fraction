@@ -21,7 +21,7 @@ class Fraction{
         return den_;
     }
 
-    static Fraction sub(Fraction f, int a){
+    static Fraction mul(Fraction f, int a){
         return new Fraction(f.num_*a, f.den_);
     }
 
@@ -32,7 +32,7 @@ class Fraction{
         return new Fraction(f.num_,f.den_*a);
     }
 
-    static Fraction sub(int a, Fraction f){
+    static Fraction mul(int a, Fraction f){
         return new Fraction(f.num_*a, f.den_);
     }
 
@@ -52,5 +52,21 @@ class Fraction{
             throw new ArithmeticException();
         }
         return new Fraction(f2.den_*f1.num_, f2.num_*f1.den_);
+    }
+
+    static Fraction sub(int a, Fraction f){
+        return new Fraction(f.den_*a - f.num_*a, f.den_*a);
+    }
+
+    static Fraction sub(Fraction f1, Fraction f2){
+        return new Fraction(f2.den_*f1.num_ - f2.num_*f1.den_, f2.den_*f1.den_);
+    }
+
+    static Fraction add(int a, Fraction f){
+        return new Fraction(f.den_*a + f.num_*a, f.den_*a);
+    }
+
+    static Fraction add(Fraction f1, Fraction f2){
+        return new Fraction(f2.den_*f1.num_ + f2.num_*f1.den_, f2.den_*f1.den_);
     }
 }

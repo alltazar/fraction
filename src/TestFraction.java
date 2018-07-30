@@ -10,15 +10,15 @@ public class TestFraction{
 
         assertEquals(4,f.getNum_());
 
-        assertEquals(8,Fraction.sub(f,2).getNum_());
+        assertEquals(8,Fraction.mul(f,2).getNum_());
 
         assertEquals(20,Fraction.div(f,4).getDen_());
 
         assertEquals(10,Fraction.div(f,2).getDen_());
 
-        assertEquals(8,Fraction.sub(2,f).getNum_());
+        assertEquals(8,Fraction.mul(2,f).getNum_());
 
-        assertEquals(-4,Fraction.sub(f,-1).getNum_());
+        assertEquals(-4,Fraction.mul(f,-1).getNum_());
 
         assertEquals(-15,Fraction.div(-3,f).getNum_());
 
@@ -27,6 +27,18 @@ public class TestFraction{
         assertEquals(20,Fraction.div(f,f).getNum_());
 
         assertEquals(20,Fraction.div(f,f).getDen_());
+
+        assertEquals(0,Fraction.sub(f,f).getNum_());
+
+        assertEquals(25,Fraction.sub(f,f).getDen_());
+
+        assertEquals(3,Fraction.sub(3,f).getNum_());
+
+        assertEquals(15,Fraction.sub(3,f).getDen_());
+
+        assertEquals(27,Fraction.add(3,f).getNum_());
+
+        assertEquals(15,Fraction.add(3,f).getDen_());
 
     }
 
